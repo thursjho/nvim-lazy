@@ -13,6 +13,7 @@ return {
         "python",
         "query",
         "regex",
+        "toml",
         "tsx",
         "typescript",
         "vim",
