@@ -93,4 +93,6 @@ return {
       },
     },
   },
+
+  {"tpope/vim-obsession"}
 }

@@ -14,6 +14,7 @@ return {
                 diagnosticSeverityOverrides = {
                   -- reportUnknownVariableType = "none",
                   reportUnknownVariableType = "false",
+                  reportUnknownMemberType = false,
                   reportUnknownParameterType = false,
                   reportMissingParameterType = false,
                 },
