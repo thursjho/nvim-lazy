@@ -12,7 +12,7 @@ return {
           settings = {
             python = {
               analysis = {
-                typeCheckingMode = "off",
+                typeCheckingMode = "standard",
                 diagnosticSeverityOverrides = {
                   -- reportUnknownVariableType = "none",
                   reportUnknownVariableType = "false",
@@ -20,6 +20,7 @@ return {
                   reportUnknownParameterType = false,
                   reportMissingParameterType = false,
                   reportDeprecated = false,
+                  reportMissingTypeArgument = false,
                 },
               },
             },
