@@ -8,6 +8,7 @@ return {
       servers = {
         -- pyright = {}
         basedpyright = {
+          mason = true,
           settings = {
             python = {
               analysis = {
