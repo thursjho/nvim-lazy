@@ -13,14 +13,14 @@ return {
             python = {
               analysis = {
                 typeCheckingMode = "off",
-                -- diagnosticSeverityOverrides = {
-                --   -- reportUnknownVariableType = "none",
-                --   reportUnknownVariableType = "false",
-                --   reportUnknownMemberType = false,
-                --   reportUnknownParameterType = false,
-                --   reportMissingParameterType = false,
-                --   -- reportDeprecated = false,
-                -- },
+                diagnosticSeverityOverrides = {
+                  -- reportUnknownVariableType = "none",
+                  reportUnknownVariableType = "false",
+                  reportUnknownMemberType = false,
+                  reportUnknownParameterType = false,
+                  reportMissingParameterType = false,
+                  reportDeprecated = false,
+                },
               },
             },
           },
