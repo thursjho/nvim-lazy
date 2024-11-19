@@ -44,9 +44,8 @@ return {
         expand = function(args)
           vim.snippet.expand(args.body)
         end,
-      },
-    end,
-
+      }
+    end
   },
 
   -- {
