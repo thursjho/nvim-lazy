@@ -3,7 +3,7 @@
 -- Add any additional options here
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.g.lazyvim_python_ruff = "ruff_lsp"
-vim.g.lazyvim_picker = "fzf"
+-- vim.g.lazyvim_picker = "fzf"
 vim.g.autoformat = false
 
 local opt = vim.opt
