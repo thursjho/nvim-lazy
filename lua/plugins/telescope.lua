@@ -1,8 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
-    -- { "<C-j>", function(bufnr) require("telescope.actions").move_selection_next(bufnr) end, desc = "Move selection next" },
-    -- { "<C-k>", function(bufnr) require("telescope.actions").move_selection_previous(bufnr) end, desc = "Move selection prev" },
     -- disable the keymap to grep files
     --   {"<leader>/", false},
     --   -- change a keymap
@@ -14,5 +12,15 @@ return {
     --     desc = "Find Plugin File",
     --   },
     -- },
+  },
+  opts = {
+    defaults = {
+      mappings = {
+        i = {
+          ["<C-j>"] = require("telescope.actions").move_selection_next,
+          ["<C-k>"] = require("telescope.actions").move_selection_previous,
+        },
+      }
+    }
   },
 }
