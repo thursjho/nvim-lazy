@@ -3,6 +3,16 @@ return {
     "folke/snacks.nvim",
     opts = {
       scroll = { enabled = false },
+    },
+    keys = {
+      { '<C-p>', function() Snacks.picker.commands() end, desc = 'Commands' },
+      { '<leader>N', function()
+        if Snacks.config.picker and Snacks.config.picker.enabled then
+          Snacks.picker.notifications()
+        else
+          Snacks.notifier.show_history()
+        end
+      end, desc = 'Notification History' },
     }
   }
 }
