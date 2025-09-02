@@ -11,7 +11,90 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins",
+      opts = {
+
+        ---@type table<string, string[]|boolean>?
+        kind_filter = {
+          default = {
+            "Class",
+            "Constructor",
+            "Enum",
+            "Field",
+            "Function",
+            "Interface",
+            "Method",
+            "Module",
+            "Namespace",
+            "Package",
+            "Property",
+            "Struct",
+            "Trait",
+
+            -- "Constant",
+            -- "Variable",
+          },
+          typescript = {
+            "Class",
+            "Constructor",
+            "Enum",
+            "Field",
+            "Function",
+            "Interface",
+            "Method",
+            "Module",
+            "Namespace",
+            "Package",
+            "Property",
+            "Struct",
+            "Trait",
+
+            "Constant",
+            "Variable",
+          },
+
+          typescriptreact = {
+            "Class",
+            "Constructor",
+            "Enum",
+            "Field",
+            "Function",
+            "Interface",
+            "Method",
+            "Module",
+            "Namespace",
+            "Package",
+            "Property",
+            "Struct",
+            "Trait",
+
+            "Constant",
+            "Variable",
+          },
+
+
+          markdown = false,
+          help = false,
+          -- you can specify a different filter for each filetype
+          lua = {
+            "Class",
+            "Constructor",
+            "Enum",
+            "Field",
+            "Function",
+            "Interface",
+            "Method",
+            "Module",
+            "Namespace",
+            -- "Package", -- remove package since luals uses it for control flow structures
+            "Property",
+            "Struct",
+            "Trait",
+          },
+        },
+
+      }
+    },
     -- import/override with your plugins
     -- { import = "lazyvim.plugins.extras.lang.python" },
     -- { import = "lazyvim.plugins.extras.lang.markdown" },

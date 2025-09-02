@@ -3,6 +3,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       scroll = { enabled = false },
+      indent = { enabled = true, only_scope = true, only_current = true }
     },
     keys = {
       { '<C-p>', function() Snacks.picker.commands() end, desc = 'Commands' },
