@@ -9,7 +9,7 @@ return {
   },
   {
     'catppuccin/nvim',
-    tag = "v1.10.0",
+    -- tag = "v1.10.0",
     requires = {"nvim-treesitter/nvim-treesitter"},
     opts = function(_, opts)
       local module = require("catppuccin.groups.integrations.bufferline")

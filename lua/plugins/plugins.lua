@@ -1,52 +1,52 @@
 return {
-  {
-    "christoomey/vim-tmux-navigator",
-    cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
-      "TmuxNavigatePrevious",
-    },
-    keys = {
-      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-    },
-  },
+  -- {
+  --   "christoomey/vim-tmux-navigator",
+  --   cmd = {
+  --     "TmuxNavigateLeft",
+  --     "TmuxNavigateDown",
+  --     "TmuxNavigateUp",
+  --     "TmuxNavigateRight",
+  --     "TmuxNavigatePrevious",
+  --   },
+  --   keys = {
+  --     { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+  --     { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+  --     { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+  --     { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+  --     { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+  --   },
+  -- },
   { "folke/noice.nvim", enabled = false },
-  {
-    "hrsh7th/nvim-cmp",
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      local has_words_before = function()
-        unpack = unpack or table.unpack
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-      end
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   ---@param opts cmp.ConfigSchema
+  --   opts = function(_, opts)
+  --     local has_words_before = function()
+  --       unpack = unpack or table.unpack
+  --       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  --       return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  --     end
 
-      local cmp = require("cmp")
+  --     local cmp = require("cmp")
 
-      opts.mapping = vim.tbl_extend("force", opts.mapping, {
-        ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
-        ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-        ["<C-y>"] = cmp.mapping(
-          cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-          }),
-          { "i", "c" }
-        ),
-      })
-      opts.snippet = {
-        expand = function(args)
-          vim.snippet.expand(args.body)
-        end,
-      }
-    end
-  },
+  --     opts.mapping = vim.tbl_extend("force", opts.mapping, {
+  --       ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+  --       ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+  --       ["<C-y>"] = cmp.mapping(
+  --         cmp.mapping.confirm({
+  --           behavior = cmp.ConfirmBehavior.Insert,
+  --           select = true,
+  --         }),
+  --         { "i", "c" }
+  --       ),
+  --     })
+  --     opts.snippet = {
+  --       expand = function(args)
+  --         vim.snippet.expand(args.body)
+  --       end,
+  --     }
+  --   end
+  -- },
 
   -- {
   --   "hrsh7th/nvim-cmp",
