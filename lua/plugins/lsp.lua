@@ -34,7 +34,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-       'b0o/schemastore.nvim',
+       -- 'b0o/schemastore.nvim',
        { 'j-hui/fidget.nvim', opts = {} },
 
 
