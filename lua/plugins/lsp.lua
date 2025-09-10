@@ -93,9 +93,10 @@ return {
               },
             },
             typescript = {
-              -- preferences = {
-              --   includePackageJsonAutoImports = "auto"
-              -- },
+              preferences = {
+                includePackageJsonAutoImports = "auto",
+                scope = 'allOpenProjects'
+              },
               updateImportsOnFileMove = { enabled = 'always' },
               suggest = {
                 completeFunctionCalls = true,
@@ -109,6 +110,12 @@ return {
                 enumMemberValues = { enabled = true },
               },
             },
+            javascript = {
+              preferences = {
+                includePackageJsonAutoImports = "auto",
+                scope = 'allOpenProjects'
+              },
+            }
           },
         },
       },
