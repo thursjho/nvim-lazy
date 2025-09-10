@@ -121,6 +121,48 @@ return {
       },
     },
   },
+  {
+    {
+      "mason-org/mason.nvim",
+      version = "^1.0.0",
+      opts = {
+        ensure_installed = {
+          -- Formatters
+          'stylua', -- Lua formatter
+          'prettier', -- Multi-language formatter
+          -- 'prettierd', -- Faster prettier
+          'ruff', -- Python formatter/linter
+          'isort', -- Python import sorter
+          'black', -- Python formatter (alternative)
+          'sql-formatter', -- SQL formatter
+          'shfmt', -- Shell script formatter
+
+          -- "stylua",
+          -- "shfmt",
+          -- "prettier",
+          -- "sql-formatter",
+
+          "taplo",
+
+          -- Linters
+          'actionlint',
+          'markuplint',
+          'eslint_d', -- Fast ESLint
+          'markdownlint', -- Markdown linter
+          'stylelint', -- CSS/SCSS linter
+          'pylint', -- Python linter (alternative)
+          'flake8', -- Python linter (alternative)
+          'mypy', -- Python type checker
+          'shellcheck', -- Shell script linter
+          'yamllint', -- YAML linter
+          'jsonlint', -- JSON linter
+          'htmlhint', -- HTML linter
+          'alex', -- Natural language linter
+          'hadolint', -- Dockerfile linter
+        }
+      }
+    }
+  }
 }
 
 
