@@ -43,13 +43,13 @@ return {
     -- },
   },
   keys = {
-    {
-      '<leader>cL',
-      function()
-        require('lint').try_lint()
-      end,
-      desc = 'lint current buffer',
-    },
+    -- {
+    --   '<leader>cL',
+    --   function()
+    --     require('lint').try_lint()
+    --   end,
+    --   desc = 'lint current buffer',
+    -- },
 
   }
 }

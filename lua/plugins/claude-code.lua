@@ -81,6 +81,8 @@ return {
       terminal_cmd = vim.env.CLAUDE_CODE_CMD or 'claude',
       -- terminal_cmd = 'ccr code',
       terminal = {
+        split_side = "right",
+        split_width_percentage = 0.3,
         provider = 'snacks'
 
       },

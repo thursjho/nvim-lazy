@@ -34,17 +34,13 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-       -- 'b0o/schemastore.nvim',
        { 'j-hui/fidget.nvim', opts = {} },
-
-
     },
     opts = {
       diagnostics = {
         virtual_text = false,
       },
       servers = {
-        -- pyright = {}
         basedpyright = {
           mason = true,
           settings = {
@@ -68,56 +64,67 @@ return {
           },
         },
 
-        vtsls = {
-          root_dir = require('lspconfig.util').root_pattern(
-            "pnpm-workspace.yaml",
-            "turbo.json",
-            "tsconfig.base.json",
-            "package.json",
-            ".git"
-          ),
-          -- root_dir = sequential_root_pattern(
-          --   "pnpm-workspace.yaml",
-          --   "turbo.json",
-          --   "tsconfig.base.json",
-          --   "package.json"
-          -- ),
-          single_file_support = false,
-          settings = {
-            vtsls = {
-              autoUseWorkspaceTsdk = true,
-              experimental = {
-                completion = {
-                  enableServerSideFuzzyMatch = true,
-                },
-              },
-            },
-            typescript = {
-              preferences = {
-                includePackageJsonAutoImports = "auto",
-                scope = 'allOpenProjects'
-              },
-              updateImportsOnFileMove = { enabled = 'always' },
-              suggest = {
-                completeFunctionCalls = true,
-              },
-              inlayHints = {
-                parameterNames = { enabled = 'literals' },
-                parameterTypes = { enabled = true },
-                variableTypes = { enabled = false },
-                propertyDeclarationTypes = { enabled = true },
-                functionLikeReturnTypes = { enabled = true },
-                enumMemberValues = { enabled = true },
-              },
-            },
-            javascript = {
-              preferences = {
-                includePackageJsonAutoImports = "auto",
-                scope = 'allOpenProjects'
-              },
-            }
-          },
-        },
+        -- vtsls = {
+        --   root_dir = require('lspconfig.util').root_pattern(
+        --     "pnpm-workspace.yaml",
+        --     "turbo.json",
+        --     "tsconfig.base.json",
+        --     "package.json",
+        --     ".git"
+        --   ),
+        --
+        --   -- root_dir = function(fname)
+        --   --   return vim.fs.root(fname, {
+        --   --     "pnpm-workspace.yaml",
+        --   --     "turbo.json",
+        --   --     "tsconfig.base.json",
+        --   --     "package.json",
+        --   --     ".git"
+        --   --   })
+        --   -- end,
+        --   --
+        --   -- root_dir = sequential_root_pattern(
+        --   --   "pnpm-workspace.yaml",
+        --   --   "turbo.json",
+        --   --   "tsconfig.base.json",
+        --   --   "package.json"
+        --   -- ),
+        --   single_file_support = false,
+        --   settings = {
+        --     vtsls = {
+        --       autoUseWorkspaceTsdk = true,
+        --       experimental = {
+        --         completion = {
+        --           enableServerSideFuzzyMatch = true,
+        --         },
+        --       },
+        --     },
+        --     typescript = {
+        --       preferences = {
+        --         includePackageJsonAutoImports = "auto",
+        --         scope = 'allOpenProjects'
+        --       },
+        --       updateImportsOnFileMove = { enabled = 'always' },
+        --       suggest = {
+        --         completeFunctionCalls = true,
+        --       },
+        --       inlayHints = {
+        --         parameterNames = { enabled = 'literals' },
+        --         parameterTypes = { enabled = true },
+        --         variableTypes = { enabled = false },
+        --         propertyDeclarationTypes = { enabled = true },
+        --         functionLikeReturnTypes = { enabled = true },
+        --         enumMemberValues = { enabled = true },
+        --       },
+        --     },
+        --     javascript = {
+        --       preferences = {
+        --         includePackageJsonAutoImports = "auto",
+        --         scope = 'allOpenProjects'
+        --       },
+        --     }
+        --   },
+        -- },
       },
     },
   },
@@ -135,11 +142,6 @@ return {
           'black', -- Python formatter (alternative)
           'sql-formatter', -- SQL formatter
           'shfmt', -- Shell script formatter
-
-          -- "stylua",
-          -- "shfmt",
-          -- "prettier",
-          -- "sql-formatter",
 
           "taplo",
 
