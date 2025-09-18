@@ -13,6 +13,7 @@ return {
     },
     keys = {
       { '<C-p>', function() Snacks.picker.commands() end, desc = 'Commands' },
+      { '<leader>cL', '<cmd>LspInfo<cr>', desc = 'Lsp Clients' },
       { '<leader>N', function()
         if Snacks.config.picker and Snacks.config.picker.enabled then
           Snacks.picker.notifications()
