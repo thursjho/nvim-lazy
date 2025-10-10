@@ -137,6 +137,7 @@ return {
           'stylua', -- Lua formatter
           'prettier', -- Multi-language formatter
           -- 'prettierd', -- Faster prettier
+          'basedpyright',
           'ruff', -- Python formatter/linter
           'isort', -- Python import sorter
           'black', -- Python formatter (alternative)
