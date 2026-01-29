@@ -26,8 +26,9 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "kanagawa-wave"
+      -- colorscheme = "kanagawa-wave"
       -- colorscheme = "github_dark"
+      colorscheme = "darcula-dark"
       -- colorscheme = "catppuccin-frappe"
     }
   }

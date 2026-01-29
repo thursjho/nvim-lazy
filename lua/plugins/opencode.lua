@@ -17,6 +17,7 @@ return {
 
     -- Recommended/example keymaps.
     vim.keymap.set({ "n", "x" }, "<C-o>", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode…" })
+    vim.keymap.set({ "n", "x" }, "<C-o>", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode…" })
     vim.keymap.set({ "n", "x" }, "<C-x>", function() require("opencode").select() end,                          { desc = "Execute opencode action…" })
     vim.keymap.set({ "n", "t" }, "<C-.>", function() require("opencode").toggle() end,                          { desc = "Toggle opencode" })
 
@@ -30,4 +31,18 @@ return {
     vim.keymap.set("n", "+", "<C-a>", { desc = "Increment under cursor", noremap = true })
     vim.keymap.set("n", "-", "<C-x>", { desc = "Decrement under cursor", noremap = true })
   end,
+  keys = {
+    {
+      "<leader>os",
+      function() require("opencode").ask("@file") end,
+      mode = { "n" },
+      desc = "Send File",
+    },
+    {
+      "<C-.>",
+      function() require("opencode").toggle() end,
+      mode = { "n" },
+      desc = "Opencode toggle",
+    },
+  }
 }
